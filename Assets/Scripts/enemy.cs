@@ -19,22 +19,40 @@ public class enemy : MonoBehaviour
 
     Vector3 baseScale;
 
-    public float moveSpeed = 5f;
-    public float downDist;
     public Timeline time;
 
+    public float moveSpeed = 5f;
+    public float downDist;
+
     public LayerMask groundLayer;
+
+    private Animator anim;
+
+    private SpriteRenderer sr;
+
+    private Collider2D collider;
+
+    private bool isDead;
+
     void Start()
     {
         baseScale = transform.localScale;
         direction = RIGHT;
 
         time = GetComponent<Timeline>();
+        anim = GetComponent<Animator>();
+        collider = GetComponent<Collider2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(isDead)
+        {
+            return;
+        }
+
         float vX = moveSpeed;
 
         if(direction == LEFT)
@@ -43,7 +61,6 @@ public class enemy : MonoBehaviour
         }
 
         time.rigidbody2D.velocity = new Vector2(vX, time.rigidbody2D.velocity.y);
-        time.rigidbody2D.gravityScale = 1f;
 
         if((isHittingWall() || isNearEdge()) && isGrounded())
         {
@@ -136,12 +153,28 @@ public class enemy : MonoBehaviour
 
         Debug.DrawRay(position, direction, Color.green);
         RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+
+        if(isHittingWall())
+        {
+            return true;
+        }
+
         if(hit.collider != null)
         {
             return true;
         }
         return false;
+    }
 
-        
+    public void Die()
+    {
+        sr.flipY = true;
+        anim.enabled = false;
+        collider.enabled = false;
+        gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        moveSpeed = 0f;
+        Destroy(gameObject, 3f);
+        isDead = true;
     }
 }

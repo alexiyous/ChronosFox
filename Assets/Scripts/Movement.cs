@@ -13,6 +13,8 @@ public class Movement : MonoBehaviour
     private AnimationScript anim;
     public Timeline time;
     public Clock enemyClock;
+    public Clock projectileClock;
+    public bool isfreezed;
 
     [Space]
     [Header("Stats")]
@@ -56,6 +58,7 @@ public class Movement : MonoBehaviour
         anim = GetComponentInChildren<AnimationScript>();
         time = GetComponent<Timeline>();
         enemyClock = Timekeeper.instance.Clock("Enemy");
+        projectileClock = Timekeeper.instance.Clock("Projectile");
     }
 
     // Update is called once per frame
@@ -196,16 +199,21 @@ public class Movement : MonoBehaviour
         Camera.main.transform.DOShakePosition(.2f, .5f, 14, 90, false, true);
         FindObjectOfType<RippleEffect>().Emit(Camera.main.WorldToViewportPoint(transform.position));
         enemyClock.localTimeScale = 0.5f;
+        projectileClock.localTimeScale = 0.33f;
         Debug.Log("Freeze");
+        isfreezed = true;
         freezeEffect = 3f;
+
     }
 
     private void UnfreezeTime()
     {
+        isfreezed = false;
         freezeEffect -= time.deltaTime;
         if (freezeEffect <= 0)
         {
             enemyClock.localTimeScale = 1f;
+            projectileClock.localTimeScale = 1f;
             freezeEffect = 0f;
         }
        
@@ -252,7 +260,7 @@ public class Movement : MonoBehaviour
 
     IEnumerator GroundDash()
     {
-        yield return new WaitForSeconds(.15f);
+        yield return new WaitForSeconds(.5f);
         if (coll.onGround)
             hasDashed = false;
     }
