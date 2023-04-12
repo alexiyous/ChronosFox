@@ -362,14 +362,4 @@ public class Movement : MonoBehaviour
         int particleSide = coll.onRightWall ? 1 : -1;
         return particleSide;
     }
-
-    public void testA()
-    {
-
-    }
-
-    public void TestB()
-    {
-
-    }
 }
