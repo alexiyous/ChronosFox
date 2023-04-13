@@ -64,6 +64,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GetTimekeeper();
+
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
         float xRaw = Input.GetAxisRaw("Horizontal");
@@ -191,6 +193,15 @@ public class Movement : MonoBehaviour
         side = anim.sr.flipX ? -1 : 1;
 
         jumpParticle.Play();
+    }
+
+    public void GetTimekeeper()
+    {
+        if (enemyClock == null)
+        {
+            enemyClock = Timekeeper.instance.Clock("Enemy");
+            projectileClock = Timekeeper.instance.Clock("Projectile");
+        }
     }
 
     private void FreezeTime()

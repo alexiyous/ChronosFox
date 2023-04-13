@@ -8,7 +8,6 @@ public class AnimationScript : MonoBehaviour
     private Animator anim;
     private Movement move;
     private Collision coll;
-    [HideInInspector]
     public SpriteRenderer sr;
 
     void Start()
@@ -21,6 +20,12 @@ public class AnimationScript : MonoBehaviour
 
     void Update()
     {
+        if (sr == null)
+        {
+            sr = GetComponent<SpriteRenderer>();
+            Debug.Log("Aman Sr nya");
+        }
+
         anim.SetBool("onGround", coll.onGround);
         anim.SetBool("onWall", coll.onWall);
         anim.SetBool("onRightWall", coll.onRightWall);
