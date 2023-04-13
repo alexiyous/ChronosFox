@@ -23,6 +23,7 @@ public class enemy : MonoBehaviour
 
     public float moveSpeed = 5f;
     public float downDist;
+    public int damageDealt;
 
     public LayerMask groundLayer;
 
@@ -176,5 +177,13 @@ public class enemy : MonoBehaviour
         moveSpeed = 0f;
         Destroy(gameObject, 3f);
         isDead = true;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerHealthController.instance.DamagePlayer(damageDealt);
+        }
     }
 }
