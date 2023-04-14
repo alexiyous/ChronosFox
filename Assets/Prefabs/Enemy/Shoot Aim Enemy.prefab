@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 4383724452938135973}
   - component: {fileID: 4383724452938135972}
   - component: {fileID: 4383724452938135971}
+  - component: {fileID: 713009190}
   m_Layer: 0
   m_Name: Shoot Aim Enemy
   m_TagString: Enemy
@@ -135,6 +136,7 @@ MonoBehaviour:
   projectileClock: {fileID: 0}
   projectile: {fileID: 7743922869477546374, guid: 95bbc47aa455c64499e0fea9846c2f4d, type: 3}
   shootPoint: {fileID: 4383724452384728508}
+  isInRange: 0
 --- !u!114 &4383724452938135971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,3 +154,29 @@ MonoBehaviour:
   _globalClockKey: Enemy
   _rewindable: 1
   _recordingDuration: 30
+--- !u!61 &713009190
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4383724452938135975}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 5.5346236, y: -1.6713026}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 12.069247, y: 4.342604}
+  m_EdgeRadius: 0

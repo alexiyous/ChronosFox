@@ -5,41 +5,108 @@ using Chronos;
 
 public class verticalMove : MonoBehaviour
 {
-    // Start is called before the first frame update
+    const string UP = "Up";
+    const string DOWN = "Down";
 
-    public float startSpeed;
+    [SerializeField]
+    Transform castPos;
 
-    private float moveTime;
-    public float startMoveTime = 2f;
+    [SerializeField]
+    float baseCastDist;
+
+    string direction;
+
+    Vector3 baseScale;
 
     public Timeline time;
-    Rigidbody2D rb;
+
+    public float moveSpeed = 1f;
+
+    public LayerMask groundLayer;
+
 
     void Start()
     {
-        time = GetComponent<Timeline>();
-        rb = GetComponent<Rigidbody2D>();
-        //time.rigidbody2D.velocity = new Vector2(0, 1).normalized * startSpeed;
-        rb.velocity = new Vector2(0, 1).normalized * startSpeed;
+        baseScale = transform.localScale;
+        direction = DOWN;
 
+        time = GetComponent<Timeline>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        move();
+        float vY = moveSpeed;
+
+        if (direction == DOWN)
+        {
+            vY = -moveSpeed;
+        }
+
+        time.rigidbody2D.velocity = new Vector2(0, vY);
+
+        if (isHittingWall())
+        {
+            if (direction == DOWN)
+            {
+                changeDir(UP);
+            }
+            else
+            {
+                changeDir(DOWN);
+            }
+        }
     }
 
-    void move()
+    void changeDir(string newDir)
     {
-        if(moveTime <= 0)
+        Vector3 newScale = baseScale;
+
+        if (newDir == DOWN)
         {
-            //time.rigidbody2D.velocity *= -1;
-            rb.velocity *= -1;
-            moveTime = startMoveTime;
-        } else
-        {
-            moveTime -= Time.deltaTime;
+            newScale.y = baseScale.y;
         }
+        else
+        {
+            newScale.y = -baseScale.y;
+        }
+
+        transform.localScale = newScale;
+        direction = newDir;
+    }
+
+
+
+    bool isHittingWall()
+    {
+        bool val = false;
+
+        float castDist = baseCastDist;
+
+        if (direction == DOWN)
+        {
+            castDist = baseCastDist;
+        }
+        else
+        {
+            castDist = -baseCastDist;
+        }
+
+        Vector3 targetPos = castPos.position;
+        targetPos.y += castDist;
+
+        Debug.DrawLine(castPos.position, targetPos, Color.blue);
+
+        if (Physics2D.Linecast(castPos.position, targetPos, 1 << LayerMask.NameToLayer("VGround")))
+        {
+            val = true;
+        }
+        else
+        {
+            val = false;
+        }
+
+
+        return val;
     }
 }

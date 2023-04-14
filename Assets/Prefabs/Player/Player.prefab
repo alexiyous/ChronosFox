@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dealDamage: 1
-  bounceForce: 24
+  bounceForce: 16
 --- !u!1 &4352332829589253621
 GameObject:
   m_ObjectHideFlags: 0
