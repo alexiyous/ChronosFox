@@ -42,7 +42,7 @@ public class xProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (!collision.CompareTag("Enemy"))
         {
             Destroy(gameObject);
             Instantiate(impactEffect, transform.position, Quaternion.identity);
