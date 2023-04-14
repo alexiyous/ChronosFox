@@ -25,8 +25,10 @@ public class Stomper : MonoBehaviour
     {
         if(collision.CompareTag("Weak Point"))
         {
-            collision.gameObject.GetComponent<EnemyHP>().TakeDamage(dealDamage);
+            time.rigidbody2D.velocity = new Vector2(0f, 0f);
             time.rigidbody2D.AddForce(transform.up * bounceForce, ForceMode2D.Impulse);
+            collision.gameObject.GetComponent<EnemyHP>().TakeDamage(dealDamage);
+            
         }
     }
 }

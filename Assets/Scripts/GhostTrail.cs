@@ -19,6 +19,23 @@ public class GhostTrail : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
     }
 
+    private void Update()
+    {
+        if(move == null)
+        {
+            move = FindObjectOfType<Movement>();
+            
+        }
+        if(anim == null)
+        {
+            anim = FindObjectOfType<AnimationScript>();
+        }
+        if(sr == null)
+        {
+            sr = GetComponent<SpriteRenderer>();
+        }
+    }
+
     public void ShowGhost()
     {
         Sequence s = DOTween.Sequence();

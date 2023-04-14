@@ -16,6 +16,7 @@ public class shootAimEnemy : MonoBehaviour
     [Space]
     public GameObject projectile;
     public Transform shootPoint;
+    public bool isInRange;
 
     Movement mov;
 
@@ -23,12 +24,17 @@ public class shootAimEnemy : MonoBehaviour
     {
         shotCD = startShotCD;
         projectileClock = Timekeeper.instance.Clock("Enemy");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        Shoot();
+        if(isInRange)
+        {
+            Shoot();
+        }
+        
     }
 
     void Shoot()
@@ -41,6 +47,22 @@ public class shootAimEnemy : MonoBehaviour
         } else
         {
             shotCD -= Time.deltaTime * projectileClock.timeScale;
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Player"))
+        {
+            isInRange = true;
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            isInRange = false;
         }
     }
 }

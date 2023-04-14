@@ -31,8 +31,6 @@ public class enemy : MonoBehaviour
 
     private SpriteRenderer sr;
 
-    private Collider2D collider;
-
     private bool isDead;
 
     void Start()
@@ -42,7 +40,6 @@ public class enemy : MonoBehaviour
 
         time = GetComponent<Timeline>();
         anim = GetComponent<Animator>();
-        collider = GetComponent<Collider2D>();
         sr = GetComponent<SpriteRenderer>();
     }
 
@@ -171,7 +168,6 @@ public class enemy : MonoBehaviour
     {
         sr.flipY = true;
         anim.enabled = false;
-        collider.enabled = false;
         gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
         moveSpeed = 0f;
