@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
     public Timeline time;
     public Clock enemyClock;
     public Clock projectileClock;
+    public Clock playerClock;
     public bool isfreezed;
 
     [Space]
@@ -35,6 +36,7 @@ public class Movement : MonoBehaviour
     public bool wallSlide;
     public bool isDashing;
     public bool canFreeze = true;
+    public bool isInSlowArea = false;
 
     [Space]
 
@@ -59,6 +61,7 @@ public class Movement : MonoBehaviour
         time = GetComponent<Timeline>();
         enemyClock = Timekeeper.instance.Clock("Enemy");
         projectileClock = Timekeeper.instance.Clock("Projectile");
+        playerClock = Timekeeper.instance.Clock("Player");
     }
 
     // Update is called once per frame
@@ -124,7 +127,8 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            time.rigidbody2D.gravityScale = 3;
+                time.rigidbody2D.gravityScale = 3;
+            
         }
 
         if(coll.onWall && !coll.onGround)
@@ -201,6 +205,7 @@ public class Movement : MonoBehaviour
         {
             enemyClock = Timekeeper.instance.Clock("Enemy");
             projectileClock = Timekeeper.instance.Clock("Projectile");
+            playerClock = Timekeeper.instance.Clock("Player");
         }
     }
 
@@ -263,7 +268,7 @@ public class Movement : MonoBehaviour
         yield return new WaitForSeconds(.3f);
 
         dashParticle.Stop();
-        time.rigidbody2D.gravityScale = 3;
+            time.rigidbody2D.gravityScale = 3;
         GetComponent<BetterJumping>().enabled = true;
         wallJumped = false;
         isDashing = false;
@@ -326,7 +331,7 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            time.rigidbody2D.velocity = Vector2.Lerp(time.rigidbody2D.velocity, (new Vector2(dir.x * speed, time.rigidbody2D.velocity.y)), wallJumpLerp * Time.deltaTime);
+            time.rigidbody2D.velocity = Vector2.Lerp(time.rigidbody2D.velocity, (new Vector2(dir.x * speed, time.rigidbody2D.velocity.y)), wallJumpLerp * Time.deltaTime * playerClock.localTimeScale);
         }
     }
 
@@ -373,4 +378,20 @@ public class Movement : MonoBehaviour
         int particleSide = coll.onRightWall ? 1 : -1;
         return particleSide;
     }
+
+    /*private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Slow"))
+        {
+            isInSlowArea = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Slow"))
+        {
+            isInSlowArea = false;
+        }
+    }*/
 }

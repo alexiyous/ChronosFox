@@ -21,7 +21,14 @@ public class PlayerHealthController : MonoBehaviour
     }
 
     public int playerHealth;
-  
+
+    public float invincibilityLength;
+    private float invinceCounter;
+
+    public float flashLength;
+    private float flashCounter;
+
+    public SpriteRenderer[] playerSprites;
 
     // Start is called before the first frame update
     void Start()
@@ -31,9 +38,41 @@ public class PlayerHealthController : MonoBehaviour
 
     public void Update()
     {
-        if (playerHealth <= 0)
+        if (invinceCounter > 0)
         {
-            RespawnController.instance.Respawn();
+            invinceCounter -= Time.deltaTime;
+
+            flashCounter -= Time.deltaTime;
+            if (flashCounter <= 0)
+            {
+                foreach (SpriteRenderer sr in playerSprites)
+                {
+                    sr.enabled = !sr.enabled;
+                }
+                flashCounter = flashLength;
+            }
+
+            if (invinceCounter <= 0)
+            {
+                foreach (SpriteRenderer sr in playerSprites)
+                {
+                    sr.enabled = true;
+                }
+                flashCounter = 0f;
+            }
+        }
+
+        if (invinceCounter <= 0)
+        {
+            if (playerHealth <= 0)
+            {
+
+                /*gameObject.SetActive(false);*/
+
+                RespawnController.instance.Respawn();
+
+                /*AudioManager.instance.PlaySFX(8);//play player death SFX*/
+            }
         }
     }
 
@@ -44,7 +83,18 @@ public class PlayerHealthController : MonoBehaviour
 
     public void DamagePlayer(int damage)
     {
+        if (invinceCounter <= 0)
+        {
             playerHealth -= damage;
-            UpdateHealth(); 
+            UpdateHealth();
+            if (playerHealth > 0)
+            {
+                invinceCounter = invincibilityLength;
+
+                /*   AudioManager.instance.PlaySFXAdjusted(11);//play player hurt SFX*/
+            }
+        }
+
+
     }
 }
