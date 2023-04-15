@@ -28,7 +28,12 @@ public class Stomper : MonoBehaviour
             time.rigidbody2D.velocity = new Vector2(0f, 0f);
             time.rigidbody2D.AddForce(transform.up * bounceForce, ForceMode2D.Impulse);
             collision.gameObject.GetComponent<EnemyHP>().TakeDamage(dealDamage);
-            
+        }
+        if(collision.CompareTag("Projectile Step"))
+        {
+            time.rigidbody2D.velocity = new Vector2(0f, 0f);
+            time.rigidbody2D.AddForce(transform.up * bounceForce, ForceMode2D.Impulse);
+            collision.gameObject.GetComponent<projectileDie>().Die();
         }
     }
 }
