@@ -83,10 +83,12 @@ public class PlayerHealthController : MonoBehaviour
 
     public void DamagePlayer(int damage)
     {
+        
         if (invinceCounter <= 0)
         {
             playerHealth -= damage;
             UpdateHealth();
+            AudioManager.instance.PlaySFXAdjusted(3);
             if (playerHealth > 0)
             {
                 invinceCounter = invincibilityLength;

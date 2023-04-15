@@ -14,8 +14,8 @@ public class Movement : MonoBehaviour
     public Timeline time;
     public Clock enemyClock;
     public Clock projectileClock;
-    public Clock playerClock;
-    public bool isfreezed;
+    public Clock musicTime;
+    public bool isfreezed = false;
 
     [Space]
     [Header("Stats")]
@@ -61,7 +61,8 @@ public class Movement : MonoBehaviour
         time = GetComponent<Timeline>();
         enemyClock = Timekeeper.instance.Clock("Enemy");
         projectileClock = Timekeeper.instance.Clock("Projectile");
-        playerClock = Timekeeper.instance.Clock("Player");
+        musicTime = Timekeeper.instance.Clock("Music");
+        
     }
 
     // Update is called once per frame
@@ -82,10 +83,12 @@ public class Movement : MonoBehaviour
         {
             if (freezeCounter <= 0)
             {
+                PlayerNotFreeze();
                 freezeCounter = 0f;
                 UnfreezeTime();
                 if (Input.GetButton("Fire2"))
                 {
+                    AudioManager.instance.PlaySFXAdjusted(1);
                     FreezeTime();
                     freezeCounter = waitAfterFreeze;
                 }
@@ -94,6 +97,7 @@ public class Movement : MonoBehaviour
                 freezeCounter -= time.deltaTime;
             }
         }
+        
 
         if (coll.onWall && Input.GetButton("Fire3") && canMove)
         {
@@ -145,6 +149,8 @@ public class Movement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
+            AudioManager.instance.PlaySFXAdjusted(0);
+
             anim.SetTrigger("jump");
 
             if (coll.onGround)
@@ -155,6 +161,7 @@ public class Movement : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1") && !hasDashed)
         {
+            AudioManager.instance.PlaySFXAdjusted(2);
             if(xRaw != 0 || yRaw != 0)
                 Dash(xRaw, yRaw);
         }
@@ -205,7 +212,7 @@ public class Movement : MonoBehaviour
         {
             enemyClock = Timekeeper.instance.Clock("Enemy");
             projectileClock = Timekeeper.instance.Clock("Projectile");
-            playerClock = Timekeeper.instance.Clock("Player");
+            musicTime = Timekeeper.instance.Clock("Music");
         }
     }
 
@@ -218,16 +225,18 @@ public class Movement : MonoBehaviour
         projectileClock.localTimeScale = 0.33f;
         Debug.Log("Freeze");
         isfreezed = true;
+        musicTime.localTimeScale = 0.5f;
         freezeEffect = 3f;
 
     }
 
     private void UnfreezeTime()
     {
-        isfreezed = false;
+        
         freezeEffect -= time.deltaTime;
         if (freezeEffect <= 0)
         {
+            isfreezed = false;
             enemyClock.localTimeScale = 1f;
             projectileClock.localTimeScale = 1f;
             freezeEffect = 0f;
@@ -331,7 +340,7 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            time.rigidbody2D.velocity = Vector2.Lerp(time.rigidbody2D.velocity, (new Vector2(dir.x * speed, time.rigidbody2D.velocity.y)), wallJumpLerp * Time.deltaTime * playerClock.localTimeScale);
+            time.rigidbody2D.velocity = Vector2.Lerp(time.rigidbody2D.velocity, (new Vector2(dir.x * speed, time.rigidbody2D.velocity.y)), wallJumpLerp * Time.deltaTime);
         }
     }
 
@@ -379,10 +388,23 @@ public class Movement : MonoBehaviour
         return particleSide;
     }
 
-    /*private void OnTriggerEnter2D(Collider2D collision)
+    private void PlayerNotFreeze()
+    {
+        if (!isInSlowArea && !isfreezed)
+        {
+            if (musicTime.localTimeScale != 1f)
+            {
+                musicTime.localTimeScale = 1f;
+               /* Debug.Log("NotFreeze");*/
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Slow"))
         {
+            musicTime.localTimeScale = 0.5f;
             isInSlowArea = true;
         }
     }
@@ -391,7 +413,7 @@ public class Movement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Slow"))
         {
-            isInSlowArea = false;
+                isInSlowArea = false;  
         }
-    }*/
+    }
 }
