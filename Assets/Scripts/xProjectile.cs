@@ -49,6 +49,7 @@ public class xProjectile : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            AudioManager.instance.PlaySFXAdjusted(6);
             Destroy(gameObject);
             Instantiate(impactEffect, transform.position, Quaternion.identity);
             PlayerHealthController.instance.DamagePlayer(1);
