@@ -45,14 +45,16 @@ public class projectile : MonoBehaviour
         time.rigidbody2D.velocity = transform.up * currentSpeed;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(!collision.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
             Instantiate(impactEffect, transform.position, Quaternion.identity);
+            PlayerHealthController.instance.DamagePlayer(1);
+
         }
-            
+
     }
 
 }
