@@ -1480,34 +1480,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snow
       objectReference: {fileID: 0}
-    - target: {fileID: 8319811104426466554, guid: 8094be06e124abe4481159496bc051f0, type: 3}
-      propertyPath: InitialModule.startColor.maxGradient.ctime0
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8319811104426466554, guid: 8094be06e124abe4481159496bc051f0, type: 3}
-      propertyPath: InitialModule.startColor.maxGradient.key0.b
-      value: 0.6988786
-      objectReference: {fileID: 0}
-    - target: {fileID: 8319811104426466554, guid: 8094be06e124abe4481159496bc051f0, type: 3}
-      propertyPath: InitialModule.startColor.maxGradient.key0.g
-      value: 0.6988786
-      objectReference: {fileID: 0}
-    - target: {fileID: 8319811104426466554, guid: 8094be06e124abe4481159496bc051f0, type: 3}
-      propertyPath: InitialModule.startColor.maxGradient.key0.r
-      value: 0.745283
-      objectReference: {fileID: 0}
-    - target: {fileID: 8319811104426466554, guid: 8094be06e124abe4481159496bc051f0, type: 3}
-      propertyPath: InitialModule.startColor.maxGradient.key1.b
-      value: 0.12912066
-      objectReference: {fileID: 0}
-    - target: {fileID: 8319811104426466554, guid: 8094be06e124abe4481159496bc051f0, type: 3}
-      propertyPath: InitialModule.startColor.maxGradient.key1.g
-      value: 0.3515546
-      objectReference: {fileID: 0}
-    - target: {fileID: 8319811104426466554, guid: 8094be06e124abe4481159496bc051f0, type: 3}
-      propertyPath: InitialModule.startColor.maxGradient.key1.r
-      value: 0.5849056
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8094be06e124abe4481159496bc051f0, type: 3}
 --- !u!1 &1014611690
