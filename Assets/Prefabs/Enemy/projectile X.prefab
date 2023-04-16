@@ -110,6 +110,7 @@ MonoBehaviour:
   impactEffect: {fileID: 1611469385286191323, guid: 1b0c027b9c7ef22429dfa5049ba35355, type: 3}
   time: {fileID: 0}
   player: {fileID: 0}
+  side: 1
 --- !u!50 &8806809976188240142
 Rigidbody2D:
   serializedVersion: 4
@@ -144,8 +145,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.01, y: 0.65753645}
-  m_Size: {x: 0.71, y: 0.52}
+  m_Offset: {x: -0.00999999, y: 0.58274513}
+  m_Size: {x: 0.71, y: 0.66958356}
   m_Direction: 0
 --- !u!114 &3797456113311406861
 MonoBehaviour:
@@ -236,7 +237,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.4200446, y: -0.111157775}
+  m_Offset: {x: -0.0040605664, y: -0.33581752}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -247,7 +248,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1599108, y: 1.7366903}
+  m_Size: {x: 0.7214891, y: 1.4167246}
   m_EdgeRadius: 0
 --- !u!114 &1542464552291782800
 MonoBehaviour:
