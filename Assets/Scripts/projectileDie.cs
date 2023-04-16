@@ -6,6 +6,6 @@ public class projectileDie : MonoBehaviour
 {
     public void Die()
     {
-        Destroy(gameObject);
+        Destroy(gameObject.transform.parent.gameObject);
     }
 }
