@@ -86,7 +86,7 @@ public class Movement : MonoBehaviour
                 PlayerNotFreeze();
                 freezeCounter = 0f;
                 UnfreezeTime();
-                if (Input.GetButton("Fire2"))
+                if (Input.GetButton("Fire2") && Time.timeScale != 0f)
                 {
                     AudioManager.instance.PlaySFXAdjusted(1);
                     FreezeTime();
@@ -147,7 +147,7 @@ public class Movement : MonoBehaviour
         if (!coll.onWall || coll.onGround)
             wallSlide = false;
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && Time.timeScale != 0f)
         {
             AudioManager.instance.PlaySFXAdjusted(0);
 
@@ -159,7 +159,7 @@ public class Movement : MonoBehaviour
                 WallJump();
         }
 
-        if (Input.GetButtonDown("Fire1") && !hasDashed)
+        if (Input.GetButtonDown("Fire1") && !hasDashed && Time.timeScale != 0f)
         {
             AudioManager.instance.PlaySFXAdjusted(2);
             if(xRaw != 0 || yRaw != 0)
