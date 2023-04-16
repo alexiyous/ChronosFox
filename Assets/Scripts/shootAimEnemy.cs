@@ -39,6 +39,7 @@ public class shootAimEnemy : MonoBehaviour
 
     void Shoot()
     {
+        
         if(shotCD <= 0)
         {
             Instantiate(projectile, shootPoint.transform.position, Quaternion.identity);

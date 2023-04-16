@@ -107,9 +107,10 @@ MonoBehaviour:
   startSpeed: 4
   maxSpeed: 15
   acceleration: 17
-  impactEffect: {fileID: 1611469385286191323, guid: 1b0c027b9c7ef22429dfa5049ba35355, type: 3}
+  impactEffect: {fileID: 5953190960771752347, guid: 6291546ace99b1942b1d63652b428a8d, type: 3}
   time: {fileID: 0}
   player: {fileID: 0}
+  side: 1
 --- !u!50 &8806809976188240142
 Rigidbody2D:
   serializedVersion: 4
@@ -190,6 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d534293e740851e4a8d5da0c47788dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitImpact: {fileID: 5953190960771752347, guid: 6291546ace99b1942b1d63652b428a8d, type: 3}
 --- !u!1 &6999670925093971698
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,6 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d534293e740851e4a8d5da0c47788dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitImpact: {fileID: 0}
 --- !u!1 &8997941685027486002
 GameObject:
   m_ObjectHideFlags: 0

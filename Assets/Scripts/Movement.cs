@@ -321,7 +321,7 @@ public class Movement : MonoBehaviour
         {
             pushingWall = true;
         }
-        float push = pushingWall ? 0 : time.rigidbody2D.velocity.x;
+        float push = pushingWall ? 0 : 0;
 
         time.rigidbody2D.velocity = new Vector2(push, -slideSpeed);
     }

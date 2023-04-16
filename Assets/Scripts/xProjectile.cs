@@ -16,6 +16,8 @@ public class xProjectile : MonoBehaviour
 
     public Transform player;
 
+    public int side = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +25,7 @@ public class xProjectile : MonoBehaviour
         time = GetComponent<Timeline>();
         currentSpeed = startSpeed;
 
-        Vector3 direction = new Vector3(1,0,0);
+        Vector3 direction = new Vector3(side,0,0);
 
         time.rigidbody2D.velocity = new Vector2(direction.x, direction.y).normalized * startSpeed;
 
@@ -47,6 +49,7 @@ public class xProjectile : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            AudioManager.instance.PlaySFXAdjusted(6);
             Destroy(gameObject);
             Instantiate(impactEffect, transform.position, Quaternion.identity);
             PlayerHealthController.instance.DamagePlayer(1);

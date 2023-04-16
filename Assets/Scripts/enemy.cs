@@ -166,6 +166,11 @@ public class enemy : MonoBehaviour
 
     public void Die()
     {
+        if(!isDead)
+        {
+            AudioManager.instance.PlaySFXAdjusted(4);
+        }
+        
         sr.flipY = true;
         anim.enabled = false;
         gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
