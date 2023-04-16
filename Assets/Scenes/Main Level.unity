@@ -180,6 +180,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78e5c33bdd557f54cb2a1f37d62153ad, type: 3}
+--- !u!1 &80633828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 80633829}
+  m_Layer: 9
+  m_Name: Junkyard Sprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &80633829
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80633828}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2103940098}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &207181070
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,6 +887,7 @@ GameObject:
   m_Component:
   - component: {fileID: 308006799}
   - component: {fileID: 308006798}
+  - component: {fileID: 308006800}
   m_Layer: 0
   m_Name: bg junkyard-Sheet_0
   m_TagString: Untagged
@@ -908,8 +940,8 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 7.2, y: 3.6}
+  m_DrawMode: 2
+  m_Size: {x: 648, y: 3.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -923,13 +955,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 308006797}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 32}
   m_LocalScale: {x: 2.83, y: 2.83, z: 2.83}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &308006800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308006797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e810ecaa48e8d0f4abcd064ed8be054b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 333768049}
+  subject: {fileID: 80633829}
 --- !u!1001 &333768048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -942,7 +988,19 @@ PrefabInstance:
       value: Main Camera
       objectReference: {fileID: 0}
     - target: {fileID: 3263544329748462851, guid: 58fc47f842964d34681160673d19a10e, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263544329748462851, guid: 58fc47f842964d34681160673d19a10e, type: 3}
       propertyPath: m_ForceIntoRT
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263544329748462851, guid: 58fc47f842964d34681160673d19a10e, type: 3}
+      propertyPath: far clip plane
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263544329748462851, guid: 58fc47f842964d34681160673d19a10e, type: 3}
+      propertyPath: near clip plane
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3263544329748462851, guid: 58fc47f842964d34681160673d19a10e, type: 3}
@@ -995,6 +1053,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58fc47f842964d34681160673d19a10e, type: 3}
+--- !u!20 &333768049 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3263544329748462851, guid: 58fc47f842964d34681160673d19a10e, type: 3}
+  m_PrefabInstance: {fileID: 333768048}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1253639063
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1062,6 +1125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1327702396}
   - component: {fileID: 1327702395}
+  - component: {fileID: 1327702397}
   m_Layer: 0
   m_Name: bg junkyard-Sheet_1
   m_TagString: Untagged
@@ -1114,8 +1178,8 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 7.2, y: 3.6}
+  m_DrawMode: 2
+  m_Size: {x: 648, y: 3.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1129,13 +1193,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1327702394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 25}
   m_LocalScale: {x: 2.83, y: 2.83, z: 2.83}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1327702397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327702394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e810ecaa48e8d0f4abcd064ed8be054b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 333768049}
+  subject: {fileID: 80633829}
 --- !u!1 &1478374298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1146,6 +1224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1478374300}
   - component: {fileID: 1478374299}
+  - component: {fileID: 1478374301}
   m_Layer: 0
   m_Name: bg junkyard-Sheet_2
   m_TagString: Untagged
@@ -1198,8 +1277,8 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 7.2, y: 3.6}
+  m_DrawMode: 2
+  m_Size: {x: 648, y: 3.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1213,13 +1292,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478374298}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 2.83, y: 2.83, z: 2.83}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1478374301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478374298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e810ecaa48e8d0f4abcd064ed8be054b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 333768049}
+  subject: {fileID: 80633829}
 --- !u!1 &1823606399
 GameObject:
   m_ObjectHideFlags: 0
@@ -1230,6 +1323,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1823606401}
   - component: {fileID: 1823606400}
+  - component: {fileID: 1823606402}
   m_Layer: 0
   m_Name: bg junkyard-Sheet_3
   m_TagString: Untagged
@@ -1282,8 +1376,8 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 7.2, y: 3.6}
+  m_DrawMode: 2
+  m_Size: {x: 648, y: 3.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1297,13 +1391,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823606399}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 2.83, y: 2.83, z: 2.83}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1823606402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823606399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e810ecaa48e8d0f4abcd064ed8be054b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 333768049}
+  subject: {fileID: 80633829}
 --- !u!1 &1908939023
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,6 +1603,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0815c4fda72ac4e49a932bf445161efb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &2103940098 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3263544329748463100, guid: 58fc47f842964d34681160673d19a10e, type: 3}
+  m_PrefabInstance: {fileID: 333768048}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &909979808923829221
 PrefabInstance:
   m_ObjectHideFlags: 0
