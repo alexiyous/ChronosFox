@@ -16,11 +16,11 @@ TagManager:
   - Water
   - UI
   - Ground
-  - Enemy
+  - Projectile
   - VGround
   - Slow
-  - Projectile
-  - 
+  - Enemy
+  - BG
   - 
   - 
   - 
