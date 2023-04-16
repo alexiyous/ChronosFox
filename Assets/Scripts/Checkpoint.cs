@@ -12,8 +12,6 @@ public class Checkpoint : MonoBehaviour
             PlayerPrefs.SetFloat("PosX", transform.position.x);
             PlayerPrefs.SetFloat("PosY", transform.position.y);
             PlayerPrefs.SetFloat("PosZ", transform.position.z);
-            PlayerPrefs.SetString("ContinueScene", "Main Level");
-            PlayerPrefs.SetInt("Heart", PlayerHealthController.instance.playerHealth);
         }
     }
 }

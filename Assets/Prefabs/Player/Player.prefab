@@ -19580,7 +19580,6 @@ MonoBehaviour:
   time: {fileID: 0}
   enemyClock: {fileID: 0}
   projectileClock: {fileID: 0}
-  musicTime: {fileID: 0}
   isfreezed: 0
   speed: 7
   jumpForce: 12
@@ -19596,7 +19595,6 @@ MonoBehaviour:
   wallSlide: 0
   isDashing: 0
   canFreeze: 1
-  isInSlowArea: 0
   side: 1
   dashParticle: {fileID: 4352332829642096759}
   jumpParticle: {fileID: 4352332829589253616}
@@ -19616,7 +19614,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallMultiplier: 3
   lowJumpMultiplier: 8
-  time: {fileID: 0}
 --- !u!114 &4352332830152254551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19671,10 +19668,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 3
-  invincibilityLength: 1.5
-  flashLength: 0.1
-  playerSprites:
-  - {fileID: 4352332830160046161}
 --- !u!1 &4352332830160046167
 GameObject:
   m_ObjectHideFlags: 0

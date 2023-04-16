@@ -5,22 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject contButton;
-    public GameObject player;
-
-    public void Start()
-    {
-        AudioManager.instance.PlayMainMenuMusic();
-        if (PlayerPrefs.HasKey("ContinueScene"))
-        {
-            contButton.SetActive(true);
-        }
-    }
-
     public void playGame()
     {
-        PlayerPrefs.DeleteAll();
-        SceneManager.LoadScene("Main Level");
+        SceneManager.LoadScene(0);
     }
 
     public void Settings()
@@ -31,17 +18,5 @@ public class MainMenu : MonoBehaviour
     public void quitGame()
     {
         Application.Quit();
-    }
-
-    public void Continue()
-    {
-        player.gameObject.SetActive(true);
-        player.transform.position = new Vector3(PlayerPrefs.GetFloat("PosX"), PlayerPrefs.GetFloat("PosY"), PlayerPrefs.GetFloat("PosZ"));
-        if (PlayerPrefs.HasKey("Heart"))
-        {
-            PlayerHealthController.instance.playerHealth = PlayerPrefs.GetInt("Heart");
-            PlayerHealthController.instance.UpdateHealth();
-        }
-            
     }
 }

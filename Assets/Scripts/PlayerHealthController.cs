@@ -33,11 +33,7 @@ public class PlayerHealthController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        
-            UpdateHealth();
-        
-        
+        UpdateHealth();
     }
 
     public void Update()

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
@@ -67,21 +66,5 @@ public class UIController : MonoBehaviour
 
             Time.timeScale = 1f;//continue the frame flow of time
         }
-    }
-
-    public void GoToMainMenu()
-    {
-        Time.timeScale = 1f; //continue the frame so it doesnt freezes the screen if creating another new game in main menu
-
-        Destroy(PlayerHealthController.instance.gameObject);//destroy the game object (player) so it doesnt spwan on the main menu
-        PlayerHealthController.instance = null;//this is crucial in order to free up some spaces ini unity memory
-
-        Destroy(RespawnController.instance.gameObject);//destroy the game object (Respawn poiny) so it doesnt spwan on the main menu
-        RespawnController.instance = null;//this is crucial in order to free up some spaces ini unity memory
-
-        instance = null;//destroy the game object so it doesnt spwan on the main menu
-        Destroy(gameObject);
-
-        SceneManager.LoadScene("Main Menu");
     }
 }
