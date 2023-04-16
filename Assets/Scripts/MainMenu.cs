@@ -35,13 +35,11 @@ public class MainMenu : MonoBehaviour
 
     public void Continue()
     {
-        player.gameObject.SetActive(true);
-        player.transform.position = new Vector3(PlayerPrefs.GetFloat("PosX"), PlayerPrefs.GetFloat("PosY"), PlayerPrefs.GetFloat("PosZ"));
-        if (PlayerPrefs.HasKey("Heart"))
+        if (PlayerPrefs.HasKey("ContinueScene"))
         {
-            PlayerHealthController.instance.playerHealth = PlayerPrefs.GetInt("Heart");
-            PlayerHealthController.instance.UpdateHealth();
+            SceneManager.LoadScene(PlayerPrefs.GetString("ContinueScene"));
         }
+        
             
     }
 }

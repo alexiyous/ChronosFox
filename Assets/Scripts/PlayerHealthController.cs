@@ -33,9 +33,13 @@ public class PlayerHealthController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        
-            UpdateHealth();
+
+        if (PlayerPrefs.HasKey("Heart"))
+        {
+           playerHealth = PlayerPrefs.GetInt("Heart");
+           UpdateHealth();
+        }
+       
         
         
     }

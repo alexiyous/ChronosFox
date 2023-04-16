@@ -62,6 +62,10 @@ public class Movement : MonoBehaviour
         enemyClock = Timekeeper.instance.Clock("Enemy");
         projectileClock = Timekeeper.instance.Clock("Projectile");
         musicTime = Timekeeper.instance.Clock("Music");
+        if (PlayerPrefs.HasKey("PosX"))
+        {
+            transform.position = new Vector3(PlayerPrefs.GetFloat("PosX"), PlayerPrefs.GetFloat("PosY"), PlayerPrefs.GetFloat("PosZ"));
+        }
         
     }
 
