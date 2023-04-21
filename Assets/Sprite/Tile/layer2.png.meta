@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c2e4f7fb416a74749ad00cc07be3589a
+guid: edbadfe5cf01aa542b2102cbd826a7cc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 21
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,8 +69,8 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
+    textureFormat: 4
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -141,13 +141,55 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Char Animation 2-Sheet_0
+      name: layer2_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b12472cc83f7add489c6a9f0b875572e
+      internalID: 1132369228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer2_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23aace245a5a1e84c9876d3f75131370
+      internalID: 318881700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer2_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 514
-        width: 108
-        height: 120
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +197,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 665557336cf64fe408d9bfef877cd5c5
-      internalID: 195618512
+      spriteID: bbfc7e5e4c1a21349bcf6e7fb8d60b3e
+      internalID: -1544454523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Char Animation 2-Sheet_1
+      name: layer2_3
       rect:
         serializedVersion: 2
-        x: 108
-        y: 514
-        width: 108
-        height: 120
+        x: 16
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,20 +218,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 178b119cacf541d499f5131744029d7c
-      internalID: -5813714
+      spriteID: 4224cbf7ba48dcf4ba3bc8a4000ca737
+      internalID: -1230506376
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Char Animation 2-Sheet_2
+      name: layer2_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 394
-        width: 108
-        height: 120
+        x: 32
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +239,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55e1ae86f21ff4b4882f8f5d19ca2673
-      internalID: -816493305
+      spriteID: c61ba7364b099104598b63c3730af09f
+      internalID: 228998958
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Char Animation 2-Sheet_3
+      name: layer2_5
       rect:
         serializedVersion: 2
-        x: 108
-        y: 394
-        width: 108
-        height: 120
+        x: 48
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,104 +260,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31d3d329810002042ab7859e517e7b87
-      internalID: 1378697752
+      spriteID: b38c60274bd2a5c46b25e06771fb6b3f
+      internalID: -1154438478
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Char Animation 2-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 216
-        y: 394
-        width: 108
-        height: 120
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8fae6dae1282d5c4284371aad032305f
-      internalID: 1765621942
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Char Animation 2-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 324
-        y: 394
-        width: 108
-        height: 120
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 66ccdccd5b5fead40882da58690d3889
-      internalID: -684791739
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Char Animation 2-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 432
-        y: 394
-        width: 108
-        height: 120
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d76b8db791d4e0a4d87476d6a48da35c
-      internalID: 1616413475
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Char Animation 2-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 540
-        y: 394
-        width: 108
-        height: 120
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e93baf97211d3db4ca3eeaf8874c7182
-      internalID: 1936181232
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Char Animation 2-Sheet_8
+      name: layer2_6
       rect:
         serializedVersion: 2
         x: 0
-        y: 274
-        width: 108
-        height: 120
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,20 +281,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1f8ac4a51f647d49944fe1d7a6611a0
-      internalID: -1122314490
+      spriteID: b1e42022ca7c2f542b090c29f8fa0bbb
+      internalID: 1645738670
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Char Animation 2-Sheet_9
+      name: layer2_7
       rect:
         serializedVersion: 2
-        x: 108
-        y: 274
-        width: 108
-        height: 120
+        x: 16
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -344,20 +302,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05dfa09287692f94f94edc9dae917d2c
-      internalID: 1430704257
+      spriteID: 5a45ddd70e1feb343b6f4107ee6dd73f
+      internalID: 1300721608
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Char Animation 2-Sheet_10
+      name: layer2_8
       rect:
         serializedVersion: 2
-        x: 216
-        y: 274
-        width: 108
-        height: 120
+        x: 32
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -365,20 +323,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6653e39d45e3a5744824aaa7fb573fd2
-      internalID: 1557825409
+      spriteID: 9237a71cfceaedc408273d3ff5ffffbf
+      internalID: 907249589
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Char Animation 2-Sheet_11
+      name: layer2_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 154
-        width: 108
-        height: 120
+        x: 48
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -386,20 +344,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5d348fe4b230f240a30bf2aaddd0b2a
-      internalID: 1087545903
+      spriteID: 42a248a37bd01b24e9974850ccffc6b0
+      internalID: 715425033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Char Animation 2-Sheet_12
+      name: layer2_10
       rect:
         serializedVersion: 2
-        x: 0
-        y: 34
-        width: 108
-        height: 120
+        x: 16
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -407,20 +365,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a7fc9adf3ae1a2499464049b089867d
-      internalID: 791856898
+      spriteID: 1777f1ae04c731643ac0f2e07954f6d9
+      internalID: 1642389925
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Char Animation 2-Sheet_13
+      name: layer2_11
       rect:
         serializedVersion: 2
-        x: 108
-        y: 34
-        width: 108
-        height: 120
+        x: 32
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -428,8 +386,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d51394920030fbd43b990924e5232132
-      internalID: 261932160
+      spriteID: 6e2ae3c79f2a62246b0f0702579dea89
+      internalID: 1244353356
       vertices: []
       indices: 
       edges: []
@@ -445,20 +403,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Char Animation 2-Sheet_7: 1936181232
-      Char Animation 2-Sheet_2: -816493305
-      Char Animation 2-Sheet_0: 195618512
-      Char Animation 2-Sheet_8: -1122314490
-      Char Animation 2-Sheet_4: 1765621942
-      Char Animation 2-Sheet_3: 1378697752
-      Char Animation 2-Sheet_12: 791856898
-      Char Animation 2-Sheet_6: 1616413475
-      Char Animation 2-Sheet_13: 261932160
-      Char Animation 2-Sheet_1: -5813714
-      Char Animation 2-Sheet_11: 1087545903
-      Char Animation 2-Sheet_10: 1557825409
-      Char Animation 2-Sheet_5: -684791739
-      Char Animation 2-Sheet_9: 1430704257
+      layer2_9: 715425033
+      layer2_2: -1544454523
+      layer2_4: 228998958
+      layer2_0: 1132369228
+      layer2_1: 318881700
+      layer2_11: 1244353356
+      layer2_6: 1645738670
+      layer2_3: -1230506376
+      layer2_8: 907249589
+      layer2_10: 1642389925
+      layer2_7: 1300721608
+      layer2_5: -1154438478
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

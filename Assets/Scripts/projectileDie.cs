@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class projectileDie : MonoBehaviour
 {
+    public GameObject hitImpact;
     public void Die()
     {
-        Destroy(gameObject);
+        Destroy(gameObject.transform.parent.gameObject);
+        
     }
 }

@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dealDamage: 1
-  bounceForce: 16
+  bounceForce: 22
 --- !u!1 &4352332829589253621
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,7 +296,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.7176471, g: 0.7176471, b: 0.7176471, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5178,7 +5178,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -10002,7 +10002,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.7176471, g: 0.7176471, b: 0.7176471, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -14826,7 +14826,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.7176471, g: 0.7176471, b: 0.7176471, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -19563,7 +19563,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.33}
-  m_Size: {x: 0.86, y: 0.82}
+  m_Size: {x: 0.43, y: 0.82}
   m_Direction: 0
 --- !u!114 &4352332830152254549
 MonoBehaviour:
@@ -19580,6 +19580,7 @@ MonoBehaviour:
   time: {fileID: 0}
   enemyClock: {fileID: 0}
   projectileClock: {fileID: 0}
+  musicTime: {fileID: 0}
   isfreezed: 0
   speed: 7
   jumpForce: 12
@@ -19595,6 +19596,7 @@ MonoBehaviour:
   wallSlide: 0
   isDashing: 0
   canFreeze: 1
+  isInSlowArea: 0
   side: 1
   dashParticle: {fileID: 4352332829642096759}
   jumpParticle: {fileID: 4352332829589253616}
@@ -19614,6 +19616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallMultiplier: 3
   lowJumpMultiplier: 8
+  time: {fileID: 0}
 --- !u!114 &4352332830152254551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19628,7 +19631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundLayer:
     serializedVersion: 2
-    m_Bits: 320
+    m_Bits: 64
   onGround: 0
   onWall: 0
   onRightWall: 0
@@ -19636,8 +19639,8 @@ MonoBehaviour:
   wallSide: 0
   collisionRadius: 0.1
   bottomOffset: {x: 0, y: -0.79}
-  rightOffset: {x: 0.5, y: -0.33}
-  leftOffset: {x: -0.5, y: -0.33}
+  rightOffset: {x: 0.23, y: -0.33}
+  leftOffset: {x: -0.26, y: -0.33}
 --- !u!114 &4352332830152254544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19668,6 +19671,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 3
+  invincibilityLength: 1.5
+  flashLength: 0.1
+  playerSprites:
+  - {fileID: 4352332830160046161}
 --- !u!1 &4352332830160046167
 GameObject:
   m_ObjectHideFlags: 0
@@ -19695,9 +19702,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4352332830160046167}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.221, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4352332830152254548}
   m_RootOrder: 0
@@ -19743,7 +19750,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5687433107252131833, guid: 9b4a8cd55e7c4f2499ae2e19bb517ecc, type: 3}
+  m_Sprite: {fileID: 740123051, guid: 335cab99dba3398458fbfe8344832614, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Weak Point
   - Slow
+  - Projectile Step
   layers:
   - Default
   - TransparentFX
@@ -15,11 +16,11 @@ TagManager:
   - Water
   - UI
   - Ground
-  - Enemy
+  - Projectile
   - VGround
   - Slow
-  - 
-  - 
+  - Enemy
+  - BG
   - 
   - 
   - 

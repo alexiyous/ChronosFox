@@ -5,9 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject contButton;
+    public GameObject player;
+
+    public void Start()
+    {
+        AudioManager.instance.PlayMainMenuMusic();
+        if (PlayerPrefs.HasKey("ContinueScene"))
+        {
+            contButton.SetActive(true);
+        }
+    }
+
     public void playGame()
     {
-        SceneManager.LoadScene(0);
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene("Main Level");
     }
 
     public void Settings()
@@ -18,5 +31,15 @@ public class MainMenu : MonoBehaviour
     public void quitGame()
     {
         Application.Quit();
+    }
+
+    public void Continue()
+    {
+        if (PlayerPrefs.HasKey("ContinueScene"))
+        {
+            SceneManager.LoadScene(PlayerPrefs.GetString("ContinueScene"));
+        }
+        
+            
     }
 }

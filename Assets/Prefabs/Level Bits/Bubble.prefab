@@ -114,9 +114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7639ecd5f2fa63e4d8336de7bd0fe6e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _localTimeScale: 0.01
+  _localTimeScale: 0.5
   _paused: 0
-  _parentKey: 
+  _parentKey: Player
   _parentBlend: 0
   _mode: 1
   _curve:
