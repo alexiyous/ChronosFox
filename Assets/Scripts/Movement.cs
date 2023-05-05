@@ -131,7 +131,7 @@ public class Movement : MonoBehaviour
 
             float speedModifier = y > 0 ? .5f : 1;
 
-            time.rigidbody2D.velocity = new Vector2(time.rigidbody2D.velocity.x, y * (speed * speedModifier));
+            time.rigidbody2D.velocity = new Vector2(0, y * (speed * speedModifier));
         }
         else
         {
