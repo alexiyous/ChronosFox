@@ -127,7 +127,7 @@ public class Movement : MonoBehaviour
         {
             time.rigidbody2D.gravityScale = 0;
             if(x > .2f || x < -.2f)
-            time.rigidbody2D.velocity = new Vector2(time.rigidbody2D.velocity.x, 0);
+            time.rigidbody2D.velocity = new Vector2(0, 0);
 
             float speedModifier = y > 0 ? .5f : 1;
 
@@ -327,7 +327,7 @@ public class Movement : MonoBehaviour
         }
         float push = pushingWall ? 0 : 0;
 
-        time.rigidbody2D.velocity = new Vector2(push, -slideSpeed);
+        time.rigidbody2D.velocity = new Vector2(0, -slideSpeed);
     }
 
     private void Walk(Vector2 dir)
