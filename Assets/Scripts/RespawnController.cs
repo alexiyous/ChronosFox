@@ -7,6 +7,7 @@ using Chronos;
 public class RespawnController : MonoBehaviour
 {
     public static RespawnController instance;
+    
 
     public void Awake()
     {
@@ -26,7 +27,8 @@ public class RespawnController : MonoBehaviour
     public float waitToRespawn;
     private Clock enemyTime;
     private Clock tembakanTime;
-   
+    private GameObject deathEffect;
+
 
     // Start is called before the first frame update
     void Start()
@@ -35,11 +37,12 @@ public class RespawnController : MonoBehaviour
         respawnPoint = thePlayer.transform.position;
         enemyTime = Timekeeper.instance.Clock("Enemy");
         tembakanTime = Timekeeper.instance.Clock("Projectile");
-
+        deathEffect = Resources.Load("Player Death Effect") as GameObject;
     }
 
     public void Respawn()
     {
+        Instantiate(deathEffect, thePlayer.transform.position, Quaternion.identity);
         StartCoroutine(RespawnCo());
     }
 
@@ -49,6 +52,7 @@ public class RespawnController : MonoBehaviour
     }
     IEnumerator RespawnCo()
     {
+
         thePlayer.SetActive(false);
         yield return new WaitForSeconds(waitToRespawn);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);//load the previously scene

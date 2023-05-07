@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8448725502871565872}
   - component: {fileID: 8448725503303987437}
   - component: {fileID: 5548660825958256157}
+  - component: {fileID: 6941250348558522927}
   m_Layer: 7
   m_Name: Patrol Enemy
   m_TagString: Enemy
@@ -60,7 +61,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -126,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   castPos: {fileID: 5548660826507218994}
-  baseCastDist: 0.3
+  baseCastDist: 0.2
   time: {fileID: 0}
   moveSpeed: 3
   downDist: 1.7
@@ -148,7 +149,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.03566885, y: -0.2626676}
-  m_Size: {x: 0.67898273, y: 0.9651078}
+  m_Size: {x: 0.50193167, y: 0.9651078}
   m_Direction: 0
 --- !u!114 &8448725502871565872
 MonoBehaviour:
@@ -194,13 +195,13 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5548660825958256134}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.068509415}
+  m_Offset: {x: 0.012727022, y: -0.4067735}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -211,8 +212,35 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.704983, y: 0.61285555}
+  m_Size: {x: 0.6378789, y: 0.66752684}
   m_EdgeRadius: 0
+--- !u!114 &6941250348558522927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5548660825958256134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.22800827, y: -0.7037343, z: 0}
+  - {x: -0.22239208, y: 0.37601805, z: 0}
+  - {x: 0.18529081, y: 0.36568117, z: 0}
+  - {x: 0.24830198, y: -0.7135602, z: 0}
+  m_ShapePathHash: -1170373019
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -185244
 --- !u!1 &5548660826507218993
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,7 +265,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5548660826507218993}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.306, y: -0.685, z: 0}
+  m_LocalPosition: {x: 0.186, y: -0.685, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

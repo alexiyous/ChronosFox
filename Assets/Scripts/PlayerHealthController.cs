@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerHealthController : MonoBehaviour
 {
     public static PlayerHealthController instance;
+    public GameObject deathEffect;
 
     private void Awake()
     {
@@ -76,7 +77,7 @@ public class PlayerHealthController : MonoBehaviour
             {
 
                 /*gameObject.SetActive(false);*/
-
+                Instantiate(deathEffect);
                 RespawnController.instance.Respawn();
 
                 /*AudioManager.instance.PlaySFX(8);//play player death SFX*/

@@ -41,7 +41,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4363951366410304831}
   serializedVersion: 8
-  lengthInSec: 1
+  lengthInSec: 1.5
   simulationSpeed: 1
   stopAction: 2
   cullingMode: 0
@@ -116,8 +116,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.75
-      minScalar: 0.25
+      scalar: 1.5
+      minScalar: 1.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3735,7 +3735,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.46
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4881,6 +4881,7 @@ GameObject:
   - component: {fileID: 1146794533087463868}
   - component: {fileID: 5838349602408947940}
   - component: {fileID: 4889852941494731510}
+  - component: {fileID: 7598785291039979698}
   m_Layer: 0
   m_Name: Player Death Effect
   m_TagString: Untagged
@@ -5620,7 +5621,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.19
+      value: 0.46
       mode: 0
       spread: 0
       speed:
@@ -9742,6 +9743,19 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &7598785291039979698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4882117158239603583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0830eaccacd13ea4c9232529c45e1f57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 5783045763585195852}
 --- !u!1 &5783045763585195852
 GameObject:
   m_ObjectHideFlags: 0
