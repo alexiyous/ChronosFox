@@ -128,7 +128,7 @@ MonoBehaviour:
   castPos: {fileID: 5548660826507218994}
   baseCastDist: 0.3
   time: {fileID: 0}
-  moveSpeed: 5
+  moveSpeed: 3
   downDist: 1.7
   damageDealt: 1
   groundLayer:
@@ -147,8 +147,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03566885, y: -0.23184568}
-  m_Size: {x: 0.67898273, y: 1.0267516}
+  m_Offset: {x: -0.03566885, y: -0.2626676}
+  m_Size: {x: 0.67898273, y: 0.9651078}
   m_Direction: 0
 --- !u!114 &8448725502871565872
 MonoBehaviour:
@@ -304,7 +304,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07, y: -0.19701037}
+  m_Offset: {x: -0.04, y: -0.24}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -315,5 +315,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 0.13}
+  m_Size: {x: 0.54136825, y: 0.075437665}
   m_EdgeRadius: 0
