@@ -45,3 +45,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Tile
+    uniqueID: 3258354483
+    locked: 0
+  - name: CameraSortingLayer
+    uniqueID: 3043959599
+    locked: 0
