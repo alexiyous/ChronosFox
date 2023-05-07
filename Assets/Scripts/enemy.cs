@@ -107,7 +107,11 @@ public class enemy : MonoBehaviour
 
         Debug.DrawLine(castPos.position, targetPos, Color.blue);
 
-        if(Physics2D.Linecast(castPos.position, targetPos, 1 << LayerMask.NameToLayer("Ground")))
+        int mask1 = 1 << LayerMask.NameToLayer("Ground");
+        int mask2 = 1 << LayerMask.NameToLayer("Player");
+        int maskCombined = mask1 | mask2;
+
+        if (Physics2D.Linecast(castPos.position, targetPos, maskCombined))
         {
             val = true;
         } else
