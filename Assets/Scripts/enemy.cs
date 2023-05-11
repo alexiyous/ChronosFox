@@ -109,7 +109,8 @@ public class enemy : MonoBehaviour
 
         int mask1 = 1 << LayerMask.NameToLayer("Ground");
         int mask2 = 1 << LayerMask.NameToLayer("Player");
-        int maskCombined = mask1 | mask2;
+        int mask3 = 1 << LayerMask.NameToLayer("Ground NC");
+        int maskCombined = mask1 | mask2 | mask3;
 
         if (Physics2D.Linecast(castPos.position, targetPos, maskCombined))
         {

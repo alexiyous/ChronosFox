@@ -21,7 +21,7 @@ TagManager:
   - Slow
   - Enemy
   - BG
-  - 
+  - Ground NC
   - 
   - 
   - 
@@ -44,6 +44,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: background
+    uniqueID: 2941395047
+    locked: 0
+  - name: Character
+    uniqueID: 746746113
     locked: 0
   - name: Tile
     uniqueID: 3258354483

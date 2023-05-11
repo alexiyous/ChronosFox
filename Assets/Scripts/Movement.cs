@@ -52,6 +52,8 @@ public class Movement : MonoBehaviour
     public ParticleSystem wallJumpParticle;
     public ParticleSystem slideParticle;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -92,6 +94,7 @@ public class Movement : MonoBehaviour
                 UnfreezeTime();
                 if (Input.GetButton("Fire2") && Time.timeScale != 0f)
                 {
+                    shockwaveController.instance.CallShockwaveInverse();
                     AudioManager.instance.PlaySFXAdjusted(1);
                     FreezeTime();
                     freezeCounter = waitAfterFreeze;
@@ -254,6 +257,7 @@ public class Movement : MonoBehaviour
         Camera.main.transform.DOComplete();
         Camera.main.transform.DOShakePosition(.2f, .5f, 14, 90, false, true);
         FindObjectOfType<RippleEffect>().Emit(Camera.main.WorldToViewportPoint(transform.position));
+        shockwaveController.instance.CallShockwave();
 
         hasDashed = true;
 
