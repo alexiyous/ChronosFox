@@ -195,7 +195,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2080127341
 Transform:
   m_ObjectHideFlags: 0
@@ -19803,8 +19803,9 @@ MonoBehaviour:
   wallJumpLerp: 5
   dashSpeed: 40
   freezeCounter: 0
-  waitAfterFreeze: 2
+  freezeDuration: 2
   freezeEffect: 0
+  freezeCooldown: 6
   canMove: 1
   wallGrab: 0
   wallJumped: 0
@@ -19812,6 +19813,7 @@ MonoBehaviour:
   isDashing: 0
   canFreeze: 1
   isInSlowArea: 0
+  isClockCooldown: 0
   side: 1
   dashParticle: {fileID: 4352332829642096759}
   jumpParticle: {fileID: 4352332829589253616}
@@ -19819,6 +19821,7 @@ MonoBehaviour:
   slideParticle: {fileID: 4352332829622412676}
   walkParticle: {fileID: 2766874243983158108, guid: 0630978e45508d94cbcec6d5ebd806d2, type: 3}
   clockUI: {fileID: 591466460}
+  clockCooldownUI: {fileID: 2080127340}
   shakeStrength: 0.5
   shakeDuration: 0.2
   vibrato: 10
@@ -19923,7 +19926,7 @@ MonoBehaviour:
   - {x: 0.09636879, y: -0.6503329, z: 0}
   m_ShapePathHash: -552360059
   m_Mesh: {fileID: 0}
-  m_InstanceId: -2576
+  m_InstanceId: -255722
 --- !u!1 &4352332830160046167
 GameObject:
   m_ObjectHideFlags: 0
