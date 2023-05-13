@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour
 {
     private Collision coll;
     [HideInInspector]
-   /* public Rigidbody2D rb;*/
+    /* public Rigidbody2D rb;*/
     private AnimationScript anim;
     public Timeline time;
     public Clock enemyClock;
@@ -25,8 +25,9 @@ public class Movement : MonoBehaviour
     public float wallJumpLerp = 10;
     public float dashSpeed = 20;
     public float freezeCounter = 0f;
-    public float waitAfterFreeze = 0f;
+    public float freezeDuration = 1f;
     public float freezeEffect = 0f;
+    public float freezeCooldown; //freezeCooldown = freezeCooldown - (freezeDuration + freezeEffect);
 
     [Space]
     [Header("Booleans")]
@@ -37,6 +38,7 @@ public class Movement : MonoBehaviour
     public bool isDashing;
     public bool canFreeze = true;
     public bool isInSlowArea = false;
+    public bool isClockCooldown = false;
 
     [Space]
 
@@ -52,6 +54,13 @@ public class Movement : MonoBehaviour
     public ParticleSystem wallJumpParticle;
     public ParticleSystem slideParticle;
     public GameObject walkParticle;
+    public GameObject clockUI;
+    public GameObject clockCooldownUI;
+
+    public float shakeStrength;
+    public float shakeDuration;
+    public int vibrato;
+    public float randomness;
 
 
 
@@ -69,7 +78,7 @@ public class Movement : MonoBehaviour
         {
             transform.position = new Vector3(PlayerPrefs.GetFloat("PosX"), PlayerPrefs.GetFloat("PosY"), PlayerPrefs.GetFloat("PosZ"));
         }
-        
+
     }
 
     // Update is called once per frame
@@ -93,24 +102,27 @@ public class Movement : MonoBehaviour
                 PlayerNotFreeze();
                 freezeCounter = 0f;
                 UnfreezeTime();
-                if (Input.GetButton("Fire2") && Time.timeScale != 0f)
+                if (Input.GetButton("Fire2") && Time.timeScale != 0f && !isClockCooldown)
                 {
                     shockwaveController.instance.CallShockwaveInverse();
                     AudioManager.instance.PlaySFXAdjusted(1);
                     FreezeTime();
-                    freezeCounter = waitAfterFreeze;
+                    freezeCounter = freezeDuration;
+                    isClockCooldown = true;
+                    StartCoroutine(TimeControlCooldown());
                 }
-            } else if (freezeCounter > 0)
+            }
+            else if (freezeCounter > 0)
             {
                 freezeCounter -= time.deltaTime;
             }
         }
-        
+
 
         if (coll.onWall && Input.GetButton("Fire3") && canMove)
         {
-            if(side != coll.wallSide)
-                anim.Flip(side*-1);
+            if (side != coll.wallSide)
+                anim.Flip(side * -1);
             wallGrab = true;
             wallSlide = false;
         }
@@ -126,12 +138,12 @@ public class Movement : MonoBehaviour
             wallJumped = false;
             GetComponent<BetterJumping>().enabled = true;
         }
-        
+
         if (wallGrab && !isDashing)
         {
             time.rigidbody2D.gravityScale = 0;
-            if(x > .2f || x < -.2f)
-            time.rigidbody2D.velocity = new Vector2(0, 0);
+            if (x > .2f || x < -.2f)
+                time.rigidbody2D.velocity = new Vector2(0, 0);
 
             float speedModifier = y > 0 ? .5f : 1;
 
@@ -139,11 +151,11 @@ public class Movement : MonoBehaviour
         }
         else
         {
-                time.rigidbody2D.gravityScale = 3;
-            
+            time.rigidbody2D.gravityScale = 3;
+
         }
 
-        if(coll.onWall && !coll.onGround)
+        if (coll.onWall && !coll.onGround)
         {
             if (x != 0 && !wallGrab)
             {
@@ -170,7 +182,7 @@ public class Movement : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && !hasDashed && Time.timeScale != 0f)
         {
             AudioManager.instance.PlaySFXAdjusted(2);
-            if(xRaw != 0 || yRaw != 0)
+            if (xRaw != 0 || yRaw != 0)
                 Dash(xRaw, yRaw);
         }
 
@@ -180,7 +192,7 @@ public class Movement : MonoBehaviour
             groundTouch = true;
         }
 
-        if(!coll.onGround && groundTouch)
+        if (!coll.onGround && groundTouch)
         {
             groundTouch = false;
         }
@@ -190,7 +202,7 @@ public class Movement : MonoBehaviour
         if (wallGrab || wallSlide || !canMove)
             return;
 
-        if(x > 0)
+        if (x > 0)
         {
             side = 1;
             anim.Flip(side);
@@ -227,20 +239,20 @@ public class Movement : MonoBehaviour
     private void FreezeTime()
     {
         Camera.main.transform.DOComplete();
-        Camera.main.transform.DOShakePosition(.2f, .5f, 14, 90, false, true);
+        Camera.main.transform.DOShakePosition(shakeDuration, shakeStrength, vibrato, randomness, false, true);
         FindObjectOfType<RippleEffect>().Emit(Camera.main.WorldToViewportPoint(transform.position));
         enemyClock.localTimeScale = 0.5f;
         projectileClock.localTimeScale = 0.33f;
         Debug.Log("Freeze");
         isfreezed = true;
         musicTime.localTimeScale = 0.5f;
-        freezeEffect = 3f;
-
+        freezeEffect = 2f;
+        clockUI.SetActive(true);
     }
 
     private void UnfreezeTime()
     {
-        
+
         freezeEffect -= time.deltaTime;
         if (freezeEffect <= 0)
         {
@@ -248,15 +260,15 @@ public class Movement : MonoBehaviour
             enemyClock.localTimeScale = 1f;
             projectileClock.localTimeScale = 1f;
             freezeEffect = 0f;
+            clockUI.SetActive(false);
         }
-       
 
     }
 
     private void Dash(float x, float y)
     {
         Camera.main.transform.DOComplete();
-        Camera.main.transform.DOShakePosition(.2f, .5f, 14, 90, false, true);
+        Camera.main.transform.DOShakePosition(shakeDuration, shakeStrength, vibrato, randomness, false, true);
         FindObjectOfType<RippleEffect>().Emit(Camera.main.WorldToViewportPoint(transform.position));
         shockwaveController.instance.CallShockwave();
 
@@ -286,7 +298,7 @@ public class Movement : MonoBehaviour
         yield return new WaitForSeconds(.3f);
 
         dashParticle.Stop();
-            time.rigidbody2D.gravityScale = 3;
+        time.rigidbody2D.gravityScale = 3;
         GetComponent<BetterJumping>().enabled = true;
         wallJumped = false;
         isDashing = false;
@@ -319,14 +331,14 @@ public class Movement : MonoBehaviour
 
     private void WallSlide()
     {
-        if(coll.wallSide != side)
-         anim.Flip(side * -1);
+        if (coll.wallSide != side)
+            anim.Flip(side * -1);
 
         if (!canMove)
             return;
 
         bool pushingWall = false;
-        if((time.rigidbody2D.velocity.x > 0 && coll.onRightWall) || (time.rigidbody2D.velocity.x < 0 && coll.onLeftWall))
+        if ((time.rigidbody2D.velocity.x > 0 && coll.onRightWall) || (time.rigidbody2D.velocity.x < 0 && coll.onLeftWall))
         {
             pushingWall = true;
         }
@@ -349,7 +361,7 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            
+
             time.rigidbody2D.velocity = Vector2.Lerp(time.rigidbody2D.velocity, (new Vector2(dir.x * speed, time.rigidbody2D.velocity.y)), wallJumpLerp * Time.deltaTime);
         }
         //StartCoroutine(WalkParticleTimer());
@@ -406,7 +418,7 @@ public class Movement : MonoBehaviour
             if (musicTime.localTimeScale != 1f)
             {
                 musicTime.localTimeScale = 1f;
-               /* Debug.Log("NotFreeze");*/
+                /* Debug.Log("NotFreeze");*/
             }
         }
     }
@@ -424,17 +436,27 @@ public class Movement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Slow"))
         {
-                isInSlowArea = false;  
+            isInSlowArea = false;
         }
     }
 
     private IEnumerator WalkParticleTimer()
     {
         yield return new WaitForSeconds(2f);
-        if(coll.onGround)
+        if (coll.onGround)
         {
             Instantiate(walkParticle);
         }
-        
+
+    }
+
+    IEnumerator TimeControlCooldown()
+    {
+        yield return new WaitForSeconds(freezeCooldown);
+        clockCooldownUI.SetActive(true);
+        yield return new WaitForSeconds(0.6f);
+        clockCooldownUI.SetActive(false);
+        isClockCooldown = false;
     }
 }
+

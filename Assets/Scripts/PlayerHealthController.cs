@@ -77,7 +77,6 @@ public class PlayerHealthController : MonoBehaviour
             {
 
                 /*gameObject.SetActive(false);*/
-                Instantiate(deathEffect);
                 RespawnController.instance.Respawn();
 
                 /*AudioManager.instance.PlaySFX(8);//play player death SFX*/
