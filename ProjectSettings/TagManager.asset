@@ -45,6 +45,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Bloom
+    uniqueID: 420469969
+    locked: 0
   - name: background
     uniqueID: 2941395047
     locked: 0

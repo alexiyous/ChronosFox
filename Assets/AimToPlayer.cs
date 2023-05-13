@@ -8,6 +8,7 @@ public class AimToPlayer : MonoBehaviour
     public GameObject pivot;
     public bool isInRange;
     public BoxCollider2D range;
+    public int dir = 180;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,7 @@ public class AimToPlayer : MonoBehaviour
     {
         Vector3 direction = player.position - transform.position;
         float rotation = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
-        pivot.transform.rotation = Quaternion.Euler(0, 0, rotation + 180);
+        pivot.transform.rotation = Quaternion.Euler(0, 0, rotation + dir);
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

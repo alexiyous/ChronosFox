@@ -51,6 +51,7 @@ public class Movement : MonoBehaviour
     public ParticleSystem jumpParticle;
     public ParticleSystem wallJumpParticle;
     public ParticleSystem slideParticle;
+    public GameObject walkParticle;
 
 
 
@@ -348,8 +349,10 @@ public class Movement : MonoBehaviour
         }
         else
         {
+            
             time.rigidbody2D.velocity = Vector2.Lerp(time.rigidbody2D.velocity, (new Vector2(dir.x * speed, time.rigidbody2D.velocity.y)), wallJumpLerp * Time.deltaTime);
         }
+        //StartCoroutine(WalkParticleTimer());
     }
 
     private void Jump(Vector2 dir, bool wall)
@@ -423,5 +426,15 @@ public class Movement : MonoBehaviour
         {
                 isInSlowArea = false;  
         }
+    }
+
+    private IEnumerator WalkParticleTimer()
+    {
+        yield return new WaitForSeconds(2f);
+        if(coll.onGround)
+        {
+            Instantiate(walkParticle);
+        }
+        
     }
 }

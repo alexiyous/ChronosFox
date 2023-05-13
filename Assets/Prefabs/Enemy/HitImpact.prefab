@@ -4917,7 +4917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0830eaccacd13ea4c9232529c45e1f57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 7317338934920043969}
+  _light: {fileID: 7317338934920043969}
 --- !u!1 &6179925889314022336
 GameObject:
   m_ObjectHideFlags: 0
@@ -9840,7 +9840,7 @@ MonoBehaviour:
   m_Intensity: 0.7
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000672052af0171822c338b36c22f236fb5
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
