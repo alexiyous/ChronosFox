@@ -156,7 +156,6 @@ GameObject:
   - component: {fileID: 2448728475181316815}
   - component: {fileID: 2448728475181316808}
   - component: {fileID: 2102547410168146765}
-  - component: {fileID: 2601727143369488164}
   - component: {fileID: 3210606087505075558}
   m_Layer: 0
   m_Name: Shoot Aim Enemy Left
@@ -220,9 +219,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1036612813
+  m_SortingLayer: 4
+  m_SortingOrder: 2
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -246,10 +245,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 210a22f7d7255764ead8afb6c37ee402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startShotCD: 1
+  startShotCD: 1.5
   time: {fileID: 0}
   projectileClock: {fileID: 0}
-  projectile: {fileID: 7743922869477546374, guid: 95bbc47aa455c64499e0fea9846c2f4d, type: 3}
+  projectile: {fileID: 7743922869477546374, guid: daeca2d64b1c80c4cbae0e03c14a6ab0, type: 3}
   shootPoint: {fileID: 2448728475701814999}
   isInRange: 0
   _light: {fileID: 6496672682205351372}
@@ -298,23 +297,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11.735779, y: 1.7675319}
   m_EdgeRadius: 0
---- !u!114 &2601727143369488164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2448728475181316812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df62e5ee2ca9da846af74f2016bb241b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  pivot: {fileID: 2182360132626835384}
-  isInRange: 0
-  range: {fileID: 0}
-  dir: 0
 --- !u!114 &3210606087505075558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,7 +343,7 @@ MonoBehaviour:
   - {x: 0.61519814, y: -0.34947848, z: 0}
   m_ShapePathHash: 2109226837
   m_Mesh: {fileID: 0}
-  m_InstanceId: 139772
+  m_InstanceId: 157988
 --- !u!1 &2448728475701814996
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,9 +446,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1036612813
+  m_SortingLayer: 4
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1652360997, guid: 179b9c8c30ea9f34c80392515130b207, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -549,9 +531,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: -1036612813
+  m_SortingLayer: 4
+  m_SortingOrder: 2
   m_Sprite: {fileID: 86100799, guid: 179b9c8c30ea9f34c80392515130b207, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1

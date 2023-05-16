@@ -272,8 +272,6 @@ GameObject:
   - component: {fileID: 5881981189131464133}
   - component: {fileID: 5881981189131464132}
   - component: {fileID: 5881981189131464130}
-  - component: {fileID: 1516270197}
-  - component: {fileID: 1516270198}
   m_Layer: 0
   m_Name: Fire Barrel
   m_TagString: Untagged
@@ -337,9 +335,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 420469969
-  m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingLayerID: -1353572249
+  m_SortingLayer: 2
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1288203687, guid: 07d8ba932163e834c9c80ff0a3f68b23, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -371,36 +369,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &1516270197
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5881981189131464135}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.7577648, y: 0.67861104, z: 0.2}
-  m_Center: {x: 0.0064764023, y: 0.4225992, z: 0}
---- !u!114 &1516270198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5881981189131464135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsGlobal: 0
-  priority: 0
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: 7e7117b813c0a52418cc716ac4f50b89, type: 2}
 --- !u!1 &5881981189997108646
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,7 +421,7 @@ MonoBehaviour:
   m_Intensity: 1.75
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 338b36c2d1dc0f19
+  m_ApplyToSortingLayers: 338b36c2d1dc0f19672052af
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0

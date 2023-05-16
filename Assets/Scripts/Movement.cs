@@ -102,14 +102,22 @@ public class Movement : MonoBehaviour
                 PlayerNotFreeze();
                 freezeCounter = 0f;
                 UnfreezeTime();
+                if (isClockCooldown)
+                {
+                    freezeCooldown -= Time.deltaTime;
+                    if (freezeCooldown <= 0)
+                    {
+                        StartCoroutine(TimeControlCooldown());
+                        isClockCooldown = false;
+                    }
+                }
+
                 if (Input.GetButton("Fire2") && Time.timeScale != 0f && !isClockCooldown)
                 {
                     shockwaveController.instance.CallShockwaveInverse();
                     AudioManager.instance.PlaySFXAdjusted(1);
                     FreezeTime();
                     freezeCounter = freezeDuration;
-                    isClockCooldown = true;
-                    StartCoroutine(TimeControlCooldown());
                 }
             }
             else if (freezeCounter > 0)
@@ -245,8 +253,10 @@ public class Movement : MonoBehaviour
         projectileClock.localTimeScale = 0.33f;
         Debug.Log("Freeze");
         isfreezed = true;
+        isClockCooldown = true;
         musicTime.localTimeScale = 0.5f;
         freezeEffect = 2f;
+        freezeCooldown = 3f;
         clockUI.SetActive(true);
     }
 
@@ -452,11 +462,9 @@ public class Movement : MonoBehaviour
 
     IEnumerator TimeControlCooldown()
     {
-        yield return new WaitForSeconds(freezeCooldown);
         clockCooldownUI.SetActive(true);
         yield return new WaitForSeconds(0.6f);
         clockCooldownUI.SetActive(false);
-        isClockCooldown = false;
     }
 }
 
