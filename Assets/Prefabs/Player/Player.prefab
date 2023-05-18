@@ -19805,7 +19805,7 @@ MonoBehaviour:
   freezeCounter: 0
   freezeDuration: 2
   freezeEffect: 0
-  freezeCooldown: 6
+  freezeCooldown: 9
   canMove: 1
   wallGrab: 0
   wallJumped: 0
@@ -20163,7 +20163,7 @@ MonoBehaviour:
   - {x: 0.06604767, y: -0.63112307, z: 0}
   m_ShapePathHash: -4935659
   m_Mesh: {fileID: 0}
-  m_InstanceId: -140300
+  m_InstanceId: -25330
 --- !u!1 &5196045521898917674
 GameObject:
   m_ObjectHideFlags: 0

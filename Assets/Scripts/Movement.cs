@@ -112,7 +112,7 @@ public class Movement : MonoBehaviour
                     }
                 }
 
-                if (Input.GetButton("Fire2") && Time.timeScale != 0f && !isClockCooldown)
+                if (Input.GetKeyDown(KeyCode.L) && Time.timeScale != 0f && !isClockCooldown)
                 {
                     shockwaveController.instance.CallShockwaveInverse();
                     AudioManager.instance.PlaySFXAdjusted(1);
@@ -187,7 +187,7 @@ public class Movement : MonoBehaviour
                 WallJump();
         }
 
-        if (Input.GetButtonDown("Fire1") && !hasDashed && Time.timeScale != 0f)
+        if (Input.GetKeyDown(KeyCode.K) && !hasDashed && Time.timeScale != 0f)
         {
             AudioManager.instance.PlaySFXAdjusted(2);
             if (xRaw != 0 || yRaw != 0)
@@ -255,8 +255,8 @@ public class Movement : MonoBehaviour
         isfreezed = true;
         isClockCooldown = true;
         musicTime.localTimeScale = 0.5f;
-        freezeEffect = 2f;
-        freezeCooldown = 3f;
+        freezeEffect = 1f;
+        freezeCooldown = 8f;
         clockUI.SetActive(true);
     }
 
