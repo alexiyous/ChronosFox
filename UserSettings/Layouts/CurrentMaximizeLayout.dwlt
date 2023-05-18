@@ -162,8 +162,8 @@ MonoBehaviour:
     y: 0
     width: 504
     height: 352
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 5}
   m_Panes:
   - {fileID: 5}
@@ -451,9 +451,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 29.59165, y: -2.667722, z: 0.15616775}
+    m_Target: {x: 30.072279, y: -2.7839189, z: 0.16718018}
     speed: 2
-    m_Value: {x: 29.59165, y: -2.667722, z: 0.15616775}
+    m_Value: {x: 30.072279, y: -2.7839189, z: 0.16718018}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -504,9 +504,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1.7387246
+    m_Target: 2.7952828
     speed: 2
-    m_Value: 1.7387246
+    m_Value: 2.7952828
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1252,7 +1252,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -187080
+  m_LastSelectedObjectID: -186866
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1277,7 +1277,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 20570
+  controlID: 28355
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1297,8 +1297,8 @@ MonoBehaviour:
     y: 0
     width: 492
     height: 305.33334
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -1334,10 +1334,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 888.6666}
-      m_SelectedIDs: 3825fdff
-      m_LastClickedID: -187080
-      m_ExpandedIDs: 0cb4fcffc41efdff3825fdff742cfdff7ea3fdff6845ffffda8fffff1a9effffbca5ffff0eb0ffff8ceaffffbaeeffffc2f7ffff68be0000cac00000c02a0100
+      scrollPos: {x: 0, y: 32}
+      m_SelectedIDs: 2eddfaff
+      m_LastClickedID: -336594
+      m_ExpandedIDs: c0f8faff4408fbff0cb4fcffc41efdff3825fdff742cfdff7ea3fdff6845ffffda8fffff1a9effffbca5ffff0eb0ffff8ceaffffbaeeffffc2f7ffff68be0000cac00000c02a0100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1429,21 +1429,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/effects
+    - Assets/Prefabs/Level Bits
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 42
   m_LastFolders:
-  - Assets/Prefabs/effects
+  - Assets/Prefabs/Level Bits
   m_LastFoldersGridSize: 42
   m_LastProjectPath: D:\Games\Mario-join
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 95.00003}
-    m_SelectedIDs: 44990000
-    m_LastClickedID: 39236
+    m_SelectedIDs: 5c8e0000
+    m_LastClickedID: 36444
     m_ExpandedIDs: 00000000fc7e0000fe7e0000007f0000027f0000047f0000067f0000087f00000a7f00000c7f00000e7f0000107f0000227f000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1497,8 +1497,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 3825fdff
-    m_LastClickedInstanceID: -187080
+    m_SelectedInstanceIDs: 2eddfaff
+    m_LastClickedInstanceID: -336594
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 56620000000000007e7500008c150500aee5000094920000c06f0000
     m_RenameOverlay:
