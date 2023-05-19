@@ -25,9 +25,8 @@ public class CameraController : MonoBehaviour
 
     }
 
-
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         //settings so the camera will always follows the player
         if (player != null)

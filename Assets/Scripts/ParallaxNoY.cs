@@ -25,7 +25,7 @@ public class ParallaxNoY : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void Update()
+    public void LateUpdate()
     {
         Vector2 newPos = startPos + travel * parallaxFactor;
         transform.position = new Vector3(newPos.x, transform.position.y, startZ);
