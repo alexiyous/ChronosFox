@@ -22,6 +22,13 @@ public class UIController : MonoBehaviour
 
     public Image[] hearts;
     public GameObject pauseScreen;
+    public Image fadeScreen;
+    public float fadeDuration = 1f;
+
+    private void Start()
+    {
+        StartCoroutine(FadeIn());
+    }
 
     public void FillHealth()
     {
@@ -83,5 +90,22 @@ public class UIController : MonoBehaviour
         Destroy(gameObject);
 
         SceneManager.LoadScene("Main Menu");
+    }
+
+    private IEnumerator FadeIn()
+    {
+        Color startColor = Color.black;
+        Color targetColor = Color.clear;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < fadeDuration)
+        {
+            fadeScreen.color = Color.Lerp(startColor, targetColor, elapsedTime / fadeDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        fadeScreen.color = targetColor;
+        fadeScreen.gameObject.SetActive(false);
     }
 }
