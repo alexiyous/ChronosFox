@@ -7,7 +7,7 @@ public class FlickeringStreetLight : MonoBehaviour
 {
     public Light2D lightSpot1;
     public Light2D lightSpot2;
-    public GameObject sparkEffect;
+    [SerializeField] private ParticleSystem sparkEffect;
     /*public float flickerIntensity;*/
     public float flickerSpeed;
     public float minIntensity;
@@ -24,9 +24,9 @@ public class FlickeringStreetLight : MonoBehaviour
     {
         originalIntensity = lightSpot1.intensity;
         flickerTimer = flickerSpeed;
-
         // Start the flickering and dimming process
         InvokeRepeating("StartFlickering", 0f, flickerSpeed);
+
     }
 
     private void Update()
@@ -73,9 +73,8 @@ public class FlickeringStreetLight : MonoBehaviour
             float randomValue = Random.value;
             if (randomValue < 0.5f)
             {
-                Instantiate(sparkEffect, lightSpot2.transform.position, Quaternion.identity);
+                sparkEffect.gameObject.SetActive(true);
             }
-
             flickerTimer = flickerSpeed;
         }
     }
@@ -93,6 +92,7 @@ public class FlickeringStreetLight : MonoBehaviour
             lightSpot2.intensity = 0.3f;
             
             isDimming = false;
+            sparkEffect.gameObject.SetActive(false);
             Invoke("StartRestoring", dimmingDelay);
         }
     }
